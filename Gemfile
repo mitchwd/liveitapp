@@ -39,3 +39,8 @@ gem 'jquery-rails'
 # OmniAuth Modules
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+group :development do
+  # List routes through /rails/routes
+  gem 'sextant'
+end
