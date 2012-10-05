@@ -23,7 +23,13 @@
       <% end %>
     <% end %>  
   </div>
-
+  
+  <% unless Rails.env == "production" %>
+    <div class="local">
+      <a href="http://liveitapp.herokuapp.com/">LOCAL DEV [Visit Remote Site]</a>
+    </div>
+  <% end %>
+  
   <div id="flash">
     <div class="notice"><%= flash[:notice] %></div>
   </div>
