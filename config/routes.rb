@@ -1,4 +1,6 @@
 Liveitapp::Application.routes.draw do
+  resources :tasks
+
   resources :entries
   
   match 'auth/:provider/callback', to: 'sessions#create'
