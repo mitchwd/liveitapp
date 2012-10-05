@@ -25,9 +25,7 @@ class TasksController < ApplicationController
   # GET /tasks/new.json
   def new
     @task = Task.new(params[:task])
-    @task.entry_id = params[:entry_id]
-    @task.user_id = current_user.id
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @task }
@@ -80,6 +78,33 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
+    end
+  end
+  
+  def liveit
+    @task = Task.new
+    # Check that the user is logged in first!
+    @task.user_id = current_user.id || nil
+    @task.entry_id = params[:id] || nil
+    begin
+      # Check if entry exists
+      Entry.find(params[:id])
+      # Set task.entry_id to entry_id
+      
+      respond_to do |format|
+        if @task.save
+          format.html { redirect_to @task, notice: 'Task was successfully created.' }
+          format.json { render json: @task, status: :created, location: @task }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @task.errors, status: :unprocessable_entity }
+        end
+      end
+    rescue ActiveRecord::RecordNotFound
+      # If the entry wasn't found, add an error.
+      @task.errors.add :entry, "is invalid"
+      # Redirect to new action.
+      render action: "new"
     end
   end
 end
