@@ -7,7 +7,7 @@ Liveitapp::Application.routes.draw do
   match 'auth/failure', to: redirect("/")
   match 'signout', to: 'sessions#destroy', as: 'signout'
   
-  match 'entries/:id/liveit', to: 'tasks#liveit', as: 'liveit'
+  match 'entries/:id/liveit', to: 'tasks#create', as: 'liveit'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
