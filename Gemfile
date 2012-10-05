@@ -38,4 +38,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # OmniAuth Modules
-gem 'omniauth-facebook'
+gem 'omniauth-twitter'
