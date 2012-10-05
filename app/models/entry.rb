@@ -6,6 +6,6 @@ class Entry < ActiveRecord::Base
   validates_uniqueness_of :date, message: "already taken. Please choose a separate date."
   validates_uniqueness_of :title
   
-  validates_length_of :translation, :within => 1..5
+  validates_length_of :verse_translation, :within => 1..5
   
 end
