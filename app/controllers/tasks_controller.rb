@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_filter :authenticate_user!, :only => [:create]
   # GET /tasks
   # GET /tasks.json
   def index
@@ -25,7 +26,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(params[:task])
-    # check if logged in first
+    # Before_filter authenticate_user! checks that user is logged in first!
     @task.user_id = current_user.id || nil
     begin
       # Check for valid entry record
@@ -47,18 +48,6 @@ class TasksController < ApplicationController
         format.html { redirect_to entries_path, notice: "Entry is invalid" }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /tasks/1
-  # DELETE /tasks/1.json
-  def destroy
-    @task = Task.find(params[:id])
-    @task.destroy
-
-    respond_to do |format|
-      format.html { redirect_to tasks_url }
-      format.json { head :no_content }
     end
   end
 end

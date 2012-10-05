@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  
   # GET /entries
   # GET /entries.json
   def index
