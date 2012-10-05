@@ -24,7 +24,9 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-    @task = Task.new
+    @task = Task.new(params[:task])
+    @task.entry_id = params[:entry_id]
+    @task.user_id = current_user.id
 
     respond_to do |format|
       format.html # new.html.erb
