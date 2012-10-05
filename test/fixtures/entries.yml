@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 
+  title: MyString
+  author: MyString
+  content: MyText
+  verse_reference: MyString
+  verse_translation: MyString
+  verse_content: MyText
+
+two:
+  date: 
+  title: MyString
+  author: MyString
+  content: MyText
+  verse_reference: MyString
+  verse_translation: MyString
+  verse_content: MyText
