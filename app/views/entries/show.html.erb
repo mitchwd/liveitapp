@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @entry.date %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @entry.author %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @entry.content %>
+</p>
+
+<p>
+  <b>Verse reference:</b>
+  <%= @entry.verse_reference %>
+</p>
+
+<p>
+  <b>Verse translation:</b>
+  <%= @entry.verse_translation %>
+</p>
+
+<p>
+  <b>Verse content:</b>
+  <%= @entry.verse_content %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

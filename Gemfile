@@ -36,3 +36,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# OmniAuth Modules
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
