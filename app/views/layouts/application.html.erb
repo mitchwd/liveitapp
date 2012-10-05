@@ -14,9 +14,13 @@
       <%= link_to "Sign out", signout_path %>
     <% else %>
       Sign In with:
-      <%= link_to "Local Developer", "/auth/developer"%>
-      <%= link_to "Facebook", "/auth/facebook"%>
-      <%= link_to "Twitter", "/auth/twitter"%>
+      
+      <% unless Rails.env == "production" %>
+        <%= link_to "Sandbox Developer", "/auth/developer" %>
+      <% else %>
+        <%= link_to "Facebook", "/auth/facebook" %>
+        <%= link_to "Twitter", "/auth/twitter" %>
+      <% end %>
     <% end %>  
   </div>
 
