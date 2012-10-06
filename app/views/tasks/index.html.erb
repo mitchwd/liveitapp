@@ -1,0 +1,6 @@
+<h1>Task Timeline</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.user.name %> completed <%= link_to task.entry.title, task.entry %> (<%= l task.entry.date, format: :short %>) <span><%= time_ago_in_words(task.created_at) %> ago</span></li>
+  <% end %>
+</ul>

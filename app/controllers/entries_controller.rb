@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  
   # GET /entries
   # GET /entries.json
   def index
@@ -14,6 +15,7 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
+    @entry_users = @entry.users.limit(10)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -79,5 +81,11 @@ class EntriesController < ApplicationController
       format.html { redirect_to entries_url }
       format.json { head :no_content }
     end
+  end
+  
+  def today
+   @entry = Entry.find(6)
+   @entry_users = @entry.users.limit(10)
+   
   end
 end

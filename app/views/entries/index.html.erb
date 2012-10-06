@@ -5,20 +5,17 @@
     <th>Date</th>
     <th>Title</th>
     <th>Author</th>
-    <th>Content</th>
-    <th>Verse</th>
-    <th colspan="3">Actions</th>
+    <th>Lived It</th>
+    <th colspan="2">Actions</th>
   </tr>
 
 <% @entries.each do |entry| %>
   <tr>
-    <td><%= entry.date.to_s(:short) %></td>
+    <td><%= l entry.date, format: :short %></td>
     <td><%= entry.title %></td>
     <td><%= entry.author %></td>
-    <td><%= truncate(entry.content, length: 30) %></td>
-    <td><%= entry.verse_reference %> (<%= entry.verse_translation %>) <%= truncate(entry.verse_content, length: 15) %></td>
+    <td><%= entry.users.count %></td>
     <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
     <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
