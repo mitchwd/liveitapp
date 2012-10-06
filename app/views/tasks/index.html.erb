@@ -1,19 +1,6 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Entry</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.user.name %></td>
-    <td><%= task.entry.title %></td>
-    <td><%= link_to 'Show', task %></td>
-  </tr>
-<% end %>
-</table>
+<h1>Task Timeline</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.user.name %> completed <%= link_to task.entry.title, task.entry %> (<%= task.entry.date.to_s(:short) %>) <span><%= time_ago_in_words(task.created_at) %> ago</span></li>
+  <% end %>
+</ul>

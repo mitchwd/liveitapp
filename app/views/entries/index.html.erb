@@ -16,7 +16,7 @@
     <td><%= entry.title %></td>
     <td><%= entry.author %></td>
     <td><%= truncate(entry.content, length: 30) %></td>
-    <td><%= entry.verse_reference %> (<%= entry.verse_translation %>) <%= truncate(entry.verse_content, length: 15) %></td>
+    <td><%= truncate(entry.verse_content, length: 15) %> (<%= entry.verse_reference %> <%= entry.verse_translation %>) </td>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <td><%= link_to 'LiveIt', liveit_path(entry.id) %></td>

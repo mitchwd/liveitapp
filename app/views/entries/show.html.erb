@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Date:</b>
-  <%= @entry.date %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @entry.title %>
-</p>
+<h3><%= @entry.title %></h3>
+<h4><%= @entry.date.to_s(:short) %></h4>
 
 <p>
   <b>Author:</b>
@@ -21,19 +14,8 @@
 </p>
 
 <p>
-  <b>Verse reference:</b>
-  <%= @entry.verse_reference %>
+  <b>Verse:</b>
+  <em><%= @entry.verse_content %></em> (<%= @entry.verse_reference %> <%= @entry.verse_translation %>)
 </p>
-
-<p>
-  <b>Verse translation:</b>
-  <%= @entry.verse_translation %>
-</p>
-
-<p>
-  <b>Verse content:</b>
-  <%= @entry.verse_content %>
-</p>
-
 
 <%= link_to 'Back', entries_path %> | <%= link_to 'LiveIt', liveit_path %>
