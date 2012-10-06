@@ -7,4 +7,6 @@ class Task < ActiveRecord::Base
   validates_presence_of :user_id, :entry_id
   validates_uniqueness_of :user_id, :scope => :entry_id, :message => "has already completed this entry."
   
+  default_scope order: 'created_at DESC'
+  
 end

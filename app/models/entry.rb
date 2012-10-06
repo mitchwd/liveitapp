@@ -10,5 +10,6 @@ class Entry < ActiveRecord::Base
   
   validates_length_of :verse_translation, :within => 1..5
   
+  default_scope order: 'date ASC'
   
 end
