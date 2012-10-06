@@ -7,6 +7,6 @@
   </content>
 </aside>
 
-<h2>Today's Entry <span><%= @entry.date.to_s(:short) %></span> </h2>
+<h2>Today's Entry <span><%= l @entry.date, format: :short %></span> </h2>
   
 <%= render :partial => "entry" %>
