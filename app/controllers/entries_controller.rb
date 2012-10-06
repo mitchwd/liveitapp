@@ -15,6 +15,7 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
+    @entry_users = @entry.users.limit(10)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -84,5 +85,7 @@ class EntriesController < ApplicationController
   
   def today
    @entry = Entry.find(6)
+   @entry_users = @entry.users.limit(10)
+   
   end
 end

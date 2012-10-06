@@ -8,5 +8,14 @@
   </p>
   
   <%= button_to "LiveIt", liveit_path(@entry) %><br />
-  Share it: ...
+  Share it: ...<br />
+  <br />
+  <div class="social">
+    <%= pluralize(@entry.users.count, "person") %> lived this out.<br />
+    <% @entry_users.each do |user| %>
+      <div class="user user_<%= user.name %>">
+        [photo] <%= user.name %>
+      </div>
+    <% end %>
+  </div>
 </div>
