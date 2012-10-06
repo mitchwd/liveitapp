@@ -81,4 +81,8 @@ class EntriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def today
+   @entry = Entry.find(6)
+  end
 end

@@ -1,14 +1,3 @@
 <h2>Entry <span><%= @entry.date.to_s(:short) %></span> </h2>
 
-<div class="article">
-  
-  <h3><%= @entry.title %></h3>
-  
-  <p>
-    <%= @entry.content %><br /><br />
-    <em><%= @entry.verse_content %></em> (<%= link_to @entry.verse_reference + " " + @entry.verse_translation, "http://www.biblegateway.com/passage/?version=#{@entry.verse_translation}&search=#{@entry.verse_reference}", target: "_blank" %>)
-  </p>
-  
-  <%= button_to 'LiveIt', liveit_path %> Share it: [fb] [twitter]
-
-</div>
+<%= render :partial => "entry" %>
