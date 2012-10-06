@@ -12,7 +12,7 @@
 
 <% @entries.each do |entry| %>
   <tr>
-    <td><%= entry.date.to_s(:short) %></td>
+    <td><%= l entry.date, format: :short %></td>
     <td><%= entry.title %></td>
     <td><%= entry.author %></td>
     <td><%= truncate(entry.content, length: 30) %></td>
