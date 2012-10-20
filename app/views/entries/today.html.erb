@@ -2,11 +2,16 @@
   <header>
     <h1>Want to live out your faith?</h1>
   </header>
-  <content>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-  </content>
+	<content>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+	</content>
+
+  <div id="divider"></div>
 </aside>
 
-<h2>Today's Entry <span><%= l @entry.date, format: :short %></span> </h2>
-  
+<h2>Today's Entry</h2>
+
 <%= render :partial => "entry" %>
+
+<%= link_to "Show all entries", entries_path %> 
+

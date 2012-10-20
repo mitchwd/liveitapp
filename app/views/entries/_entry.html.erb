@@ -1,21 +1,44 @@
 <div class="article">
+  <div class="tag tag_red">
+    <div class="tagvalue">
+	    <h3><%= @entry.date.day %></h3>
+		  <p><%= @entry.date.strftime("%b") %></p>
+    </div>
+  </div>
   
-  <h3><%= @entry.title %></h3>
+  <div class="tag tag_green tag_second">
+    <div class="tagvalue">
+	    <h3></h3>
+		  <p>&nbsp;</p>
+    </div>
+  </div>
   
-  <p>
-    <%= @entry.content %><br /><br />
-    <em><%= @entry.verse_content %></em> (<%= link_to @entry.verse_reference + " " + @entry.verse_translation, "http://www.biblegateway.com/passage/?version=#{@entry.verse_translation}&search=#{@entry.verse_reference}", target: "_blank" %>)
+  <h2><%= link_to @entry.title, entry %></h2>
+  
+  <p><%= @entry.content %><br /><br />
+
+    <em><%= @entry.verse_content %></em> 
+    (<%= link_to @entry.verse_reference + " " + @entry.verse_translation, "http://www.biblegateway.com/passage/?version=#{@entry.verse_translation}&search=#{@entry.verse_reference}", target: "_blank" %>)
   </p>
-  
-  <%= button_to "LiveIt", liveit_path(@entry) %><br />
-  Share it: ...<br />
-  <br />
-  <div class="social">
-    <%= pluralize(@entry.users.count, "person") %> lived this out.<br />
-    <% @entry_users.each do |user| %>
-      <div class="user user_<%= user.name %>">
-        [photo] <%= user.name %>
+
+  	<%= button_to "LiveIt", liveit_path(@entry) %>
+  </div>
+
+  <!-- Sharing -->
+  <div id="sharing">
+    <div id="sharecontent">
+  	  <br />
+  	  <div id="share" class="hidden">
+  	    <a href="#" class='zocial facebook'>Share on Facebook</a>
+        <a href="#" class='zocial twitter'>Share on Twitter </a>
       </div>
-    <% end %>
+
+      <div class="social">
+        <%= pluralize(@entry.users.count, "person") %> lived this out.<br />
+        <% @entry.users.first(10).each do |user| %>
+          <%= image_tag("http://www.placehold.it/50x50", class: "user user_#{user.name}") %> 
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
