@@ -311,29 +311,26 @@ a:hover {
 }
 
 /*--Errors and Notices--*/
-
-
+form.button_to div {
+	text-align: center;
+}
 
 div.field, div.actions {
 	margin-bottom:10px;
 }
 
-form.button_to div {
-	text-align: center;
-}
-
 form input {
-	font-size: 60px;
+  font-size: 60px;
 }
 
-#notice {
-	color:green;
+div.field, div.actions {
+	margin-bottom:10px;
 }
 
 .field_with_errors {
 	padding:2px;
 	background-color:red;
-	display:table;
+	display: table;
 }
 
 #error_explanation {
@@ -366,8 +363,8 @@ form input {
 
 @media only screen and (max-device-width: 680px) {
 
-header nav {
-	text-align: center;
-}
+  header nav {
+	  text-align: center; 
+  }
 
 }
