@@ -19,14 +19,17 @@
             <%= link_to "Sign In via Twitter", "/auth/twitter", class: "zocial twitter" %> <%= link_to "Sign In via Facebook", "/auth/facebook", class: "zocial facebook" %> 
         <% end %>  
       </nav>
+      <div id="divider"></div>
   </header>
 
-  <div id="divider"></div>
-
   <section class="content">
-    <div id="flash">
-      <div class="notice"><%= flash[:notice] %></div>
-    </div>
+    <% if flash[:notice] %>
+      <div id="flash">
+        <br />
+        <br />
+        <div class="notice"><%= flash[:notice] %></div>
+      </div>
+    <% end %>
   
     <%= yield %>
   
