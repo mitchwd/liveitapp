@@ -4,10 +4,17 @@
 <% @entries.each do |entry| %>
   
 <div class="article">
-  <div id="date">
-    <div id="datevalue">
+  <div class="tag tag_red">
+    <div class="tagvalue">
 	    <h3><%= entry.date.day %></h3>
 		  <p><%= entry.date.strftime("%b") %></p>
+    </div>
+  </div>
+  
+  <div class="tag tag_green tag_second">
+    <div class="tagvalue">
+	    <h3></h3>
+		  <p>&nbsp;</p>
     </div>
   </div>
   

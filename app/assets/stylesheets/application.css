@@ -181,8 +181,7 @@ aside {
 	margin-top: 3px;
 }
 
-#date {
-	background-color: rgba(238,71,67,0.6);
+.tag {
 	width: 50px;
 	text-align: left;
 	padding-top: 5px;
@@ -196,17 +195,34 @@ aside {
 	float:left;
 }
 
-#datevalue h3 {
+.tag_red {
+  background-color: rgba(238,71,67,0.6);
+}
+
+.tag_green {
+  background-color: rgba(67,238,71,0.6);
+}
+
+.tag_blue {
+  background-color: rgba(67,234,238,0.6);
+}
+
+.tag_second {
+  margin-top: 85px;
+}
+
+.tagvalue h3 {
 	color: white;
 	font-size: 26px;
 	margin-top: 0px;
 	margin-top: 17px;
 	line-height: 0px;
-	padding-left: 12px;
+	padding-right: 6px;
+	text-align: center;
 	text-shadow: 1px 1px rgba(0,0,0,0.1), -1px -1px rgba(0,0,0,0.2);
 }
 
-#datevalue p {
+.tagvalue p {
 	color: white;
 	font-size: 16px;
 	line-height: 0px;
@@ -216,7 +232,7 @@ aside {
 }
 
 
-#datevalue {
+.tagvalue {
 	border-top-style:dashed;
 	border-bottom-style:dashed;
 	border-left-style:dashed;
