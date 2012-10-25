@@ -16,6 +16,7 @@
 
 body {
 	/* background-image: url(bg.png); */
+	background: rgba(0, 0, 0, 0.6); 
 	width: 640px;
 	max-width: 80%;
 	margin:0 auto;
@@ -23,6 +24,18 @@ body {
 	font-size:13px;
 	line-height:18px;
 	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue';
+}
+
+header nav {
+  padding-top: 120px;
+}
+
+header nav a {
+  font-size: 16px;
+}
+
+header nav p {
+  padding-right: 10px;
 }
 
 .logo {
@@ -343,6 +356,18 @@ a:hover {
 	font-weight: normal;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
 /*--Errors and Notices--*/
 form.button_to div {
 	text-align: center;
@@ -398,6 +423,7 @@ div.field, div.actions {
 
   header nav {
 	  text-align: center; 
+	  padding-top: 10px;
   }
-
+  
 }
