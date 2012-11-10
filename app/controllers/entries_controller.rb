@@ -83,6 +83,7 @@ class EntriesController < ApplicationController
   end
   
   def today
-   @entry = Entry.find(6)
+   # TODO: Add dynamic days here.
+   @entry = Entry.last
   end
 end
