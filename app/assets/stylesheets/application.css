@@ -64,15 +64,14 @@ header nav p {
   
 }
 
-a.bigbtn2, a.bigbtn2:visited {
+.bigbtn2, a.bigbtn2:visited {
 	background-color: #019FDE;
 	color: white;
 	border-radius: 4px;
 	display: inline-block;
 	font-size: 16px;
-	padding: 8px;
+	padding: 8px 30px;
 	height: 24px;
-	width: 80px;
 	text-align: center;
 	text-decoration: none;
 	-webkit-transition: 0.24s ease-in-out;
@@ -84,6 +83,10 @@ a.bigbtn2, a.bigbtn2:visited {
 a.bigbtn2:hover {
 	background-color: #01B3FD;
 	color: white;
+}
+
+.bigbtn2.success {
+  background-color: rgba(67,238,71,0.6);
 }
 
 

@@ -5,13 +5,15 @@
 		  <p>DAY</p>
     </div>
   </div>
-  
-  <div class="tag tag_green tag_second">
-    <div class="tagvalue">
-	    <h3></h3>
-		  <p>&nbsp;</p>
+
+  <% if @entry.users.include?(current_user) %>
+    <div class="tag tag_green tag_second">
+      <div class="tagvalue">
+  	    <h3></h3>
+  		  <p>&nbsp;</p>
+      </div>
     </div>
-  </div>
+  <% end %>
   
   <h2><%= link_to @entry.title, entry %></h2>
   
@@ -20,8 +22,12 @@
     <em><%= @entry.verse_content %></em> 
     (<%= link_to @entry.verse_reference + " " + @entry.verse_translation, "http://www.biblegateway.com/passage/?version=#{@entry.verse_translation}&search=#{@entry.verse_reference}", target: "_blank" %>)
   </p>
-
+ 
+  <% if @entry.users.include?(current_user) %>
+    <span class="bigbtn2 success">You've lived this out!</span>
+  <% else %>
   	<%= link_to "LiveIt", liveit_path(@entry), class: "bigbtn2" %>
+  <% end %>
   </div>
 
   <!-- Sharing -->
