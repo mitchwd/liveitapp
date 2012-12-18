@@ -42,7 +42,7 @@
       <div class="social">
         <%= pluralize(@entry.users.count, "person") %> lived this out.<br />
         <% @entry.users.first(10).each do |user| %>
-          <%= image_tag("http://www.placehold.it/50x50", class: "user user_#{user.name}") %> 
+          <%= image_tag("#{user.image_url}", class: "user user_#{user.name}") %> 
         <% end %>
       </div>
     </div>
