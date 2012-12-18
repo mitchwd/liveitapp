@@ -83,6 +83,7 @@ class EntriesController < ApplicationController
   end
   
   def today
-   @entry = Entry.find(6)
+   # Choose random entry - based on today's date. Use offset to ensure that record exists.
+   @entry = Entry.offset(Random.new(Time.now.beginning_of_day.to_i).rand(Entry.count)).first
   end
 end
