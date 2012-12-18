@@ -83,7 +83,7 @@ class EntriesController < ApplicationController
   end
   
   def today
-   # TODO: Add dynamic days here.
-   @entry = Entry.last
+   # Choose random entry
+   @entry = Entry.offset(rand(Entry.count)).first
   end
 end
