@@ -115,7 +115,7 @@ nav a:hover {
 
 
 #share {
-	text-align:center;
+	text-align: center;
 }
 
 
@@ -319,11 +319,6 @@ footer .nav {
 
 a:visited {
 	color: black;
-}
-
-.user.user_mitchwd {
-	display: relative;
-	text-align: ;
 }
 
 /*--Typography-*/
